@@ -22,10 +22,15 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
+    text: {
+        type: [String],
+
+    },
+
     verify: {
         type: Boolean,
         default: false
-    }
+    },  
 },
 {
     timestamps: true

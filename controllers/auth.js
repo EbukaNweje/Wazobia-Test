@@ -10,7 +10,7 @@ exports.register = async (req, res, next)=>{
         if (!errors.isEmpty()) {
           return res.status(400).json({ errors: errors.array() });
         }
-        
+
         const {email} = req.body
         user.findOne({ email }, async (err, User) =>{
             if(err){
@@ -44,3 +44,4 @@ exports.register = async (req, res, next)=>{
         next(err)
     }
 }
+
