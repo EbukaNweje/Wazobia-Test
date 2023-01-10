@@ -4,6 +4,7 @@ const dotenv = require('dotenv')
 const cookkieParser = require("cookie-parser")
 const cors = require('cors')
 const Adduser = require('./routes/AddAccount')
+const Register = require('./routes/Auth')
 
 dotenv.config({path: "./config/index.env"})
 
@@ -23,6 +24,7 @@ mongoose.connect(Db, {
 })
 
 app.use("/api/v1/", Adduser)
+app.use("/api/v1/signup", Register)
 
 app.use((err, req, res, next)=>{
     const errorStatus = err.status || 500

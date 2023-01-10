@@ -1,8 +1,7 @@
-const { boolean } = require('joi')
 const mongoose = require('mongoose')
 
 const userSchema = new mongoose.Schema({
-    fristName:{
+    firstName:{
         type: String,
         required: true
     },
@@ -16,6 +15,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
+    },
+
+    password: {
+        type: String,
+        required: true
     },
 
     verify: {
